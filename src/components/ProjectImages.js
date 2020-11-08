@@ -16,7 +16,11 @@ const ProjectImages = ({
   };
 
   return (
-    <Flex flexDirection={['column', 'column', 'column', 'row']}>
+    <Flex
+      flexDirection={['column', 'column', 'column', 'row']}
+      align="center"
+      justify="center"
+    >
       {photoIndex === 0 ? (
         <Box
           maxW={['60vw', '60vw', '50vw', '55vw']}
