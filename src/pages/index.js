@@ -1,4 +1,4 @@
-import { Box, Flex, List, ListItem } from '@chakra-ui/core';
+import { Box, Flex } from '@chakra-ui/core';
 import Head from 'next/head';
 import MainGallery from '../components/MainGallery';
 import SideNav from '../components/SideNav';
@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Box>
       <Head>
-        <title>MP Portfolio</title>
+        <title> The Yendamuri </title>
         <link rel="icon" href="../src/assets/favicon.ico" />
       </Head>
 
