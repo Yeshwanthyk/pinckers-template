@@ -26,7 +26,7 @@ const ProjectPage = () => {
   }, [router]);
 
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = () => {
       setphotoIndex(0);
     };
 
@@ -59,6 +59,8 @@ const ProjectPage = () => {
           projectName={projectName}
           projectDesc={projectDesc}
           photoIndex={photoIndex}
+          imageNum={imageNum}
+          setphotoIndex={setphotoIndex}
         />
       </Flex>
     </Flex>

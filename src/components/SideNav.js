@@ -8,7 +8,7 @@ const SideNav = () => {
   return (
     <Box as="nav">
       <Flex flexDirection="column">
-        <Box mb={8}>
+        <Box mb={8} width="4rem">
           <Link href="/">
             <a>
               <Logo />
