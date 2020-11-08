@@ -8,8 +8,9 @@ const siteData = [
   },
   {
     name: 'basement',
-    desc: 'No light for a year',
-    imageNum: 2,
+    desc:
+      'The Lady of the Lake, her arm clad in the purest shimmering samite held aloft Excalibur from the bosom of the water, signifying by divine providence that I, Arthur, was to carry Excalibur. THAT is why I am your king. Thats what being a Protestants all about. Thats why its the church for me. Thats why its the church for anyone who respects the individual and the individuals right to decide for him or herself.',
+    imageNum: 5,
   },
 ];
 
