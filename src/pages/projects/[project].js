@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Flex, Image as CImage } from '@chakra-ui/core';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import SideNav from '../../components/SideNav';
 import siteData from '../../../siteData';
+import PhotoCounter from '../../components/PhotoCounter';
+import ProjectImages from '../../components/ProjectImages';
 
 const ProjectPage = () => {
   const [photoIndex, setphotoIndex] = useState(0);
@@ -24,6 +25,17 @@ const ProjectPage = () => {
     }
   }, [router]);
 
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      setphotoIndex(0);
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, []);
+
   let imageNames = [];
   if (imageNum > 0) {
     for (let i = 1; i <= imageNum; i++) {
@@ -31,41 +43,23 @@ const ProjectPage = () => {
     }
   }
 
-  const nextImage = () => {
-    if (!(photoIndex > imageNum - 2)) {
-      setphotoIndex(photoIndex + 1);
-    }
-  };
-
-  const prevImage = () => {
-    if (photoIndex > 0) {
-      setphotoIndex(photoIndex - 1);
-    }
-  };
-
   return (
     <Flex>
-      <Flex flexBasis="10rem" flexGrow="1">
+      <Flex flexBasis={['4rem', '6rem', '8rem']} flexGrow="1">
         <SideNav />
       </Flex>
       <Flex flexDirection="column" flexBasis="0" flexGrow="999" ml={8}>
-        <Flex mb={2}>
-          <Box mr={2}>{`${photoIndex + 1} of ${imageNum}`}</Box>
-          <Box mr={1}>
-            <button onClick={prevImage}>Prev</button>
-          </Box>
-          <Box mr={1}> | </Box>
-          <Box>
-            <button onClick={nextImage}> Next</button>
-          </Box>
-        </Flex>
-        <Box maxW="25vw" mb={8}>
-          <CImage src={imageNames[photoIndex]} objectFit="cover" />
-        </Box>
-        <Box textTransform="capitalize" mb={8}>
-          {projectName}
-        </Box>
-        <Box maxW="50%">{projectDesc}</Box>
+        <PhotoCounter
+          imageNum={imageNum}
+          photoIndex={photoIndex}
+          setphotoIndex={setphotoIndex}
+        />
+        <ProjectImages
+          imageNames={imageNames}
+          projectName={projectName}
+          projectDesc={projectDesc}
+          photoIndex={photoIndex}
+        />
       </Flex>
     </Flex>
   );
