@@ -6,15 +6,35 @@ const ProjectImages = ({
   photoIndex,
   projectName,
   projectDesc,
+  imageNum,
+  setphotoIndex,
 }) => {
+  const nextImage = () => {
+    if (!(photoIndex > imageNum - 2)) {
+      setphotoIndex(photoIndex + 1);
+    }
+  };
+
   return (
     <Flex flexDirection={['column', 'column', 'column', 'row']}>
       {photoIndex === 0 ? (
-        <Box maxW={['60vw', '60vw', '50vw', '55vw']} mx={8} my={[4, 4, 4, 0]}>
+        <Box
+          maxW={['60vw', '60vw', '50vw', '55vw']}
+          mx={8}
+          my={[4, 4, 4, 0]}
+          cursor="pointer"
+          onClick={nextImage}
+        >
           <CImage src={imageNames[photoIndex]} objectFit="cover" />
         </Box>
       ) : (
-        <Box maxW={['70vw', '70vw', '60vw', '65vw']} mx={8} my={[4, 4, 4, 0]}>
+        <Box
+          maxW={['70vw', '70vw', '60vw', '65vw']}
+          mx={8}
+          my={[4, 4, 4, 0]}
+          cursor="pointer"
+          onClick={nextImage}
+        >
           <CImage src={imageNames[photoIndex]} objectFit="cover" />
         </Box>
       )}
