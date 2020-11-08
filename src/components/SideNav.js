@@ -7,7 +7,9 @@ const SideNav = () => {
   return (
     <Box as="nav">
       <Flex flexDirection="column">
-        <Box>YK</Box>
+        <Box>
+          <Link href="/">YK</Link>
+        </Box>
         {siteData.map((project, index) => {
           {
             return (
