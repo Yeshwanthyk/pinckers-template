@@ -10,13 +10,34 @@ import fs from 'fs';
 import path from 'path';
 
 const ProjectPage = ({ imageNames }) => {
-  console.log(imageNames);
   const [photoIndex, setphotoIndex] = useState(0);
   const [imageNum, setimageNum] = useState(0);
   const [projectDesc, setprojectDesc] = useState('');
   const router = useRouter();
 
   const { project: projectName } = router.query;
+
+  useEffect(() => {
+    if (router.asPath !== router.route) {
+      const projectData = siteData.filter(
+        (project) => project.name === projectName
+      )[0];
+
+      setimageNum(projectData.imageNum);
+      setprojectDesc(projectData.desc);
+    }
+  }, [router]);
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setphotoIndex(0);
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, []);
 
   return (
     <Flex>
@@ -64,7 +85,7 @@ export async function getStaticPaths() {
       { params: { project: 'briefly' } },
       { params: { project: 'basement' } },
     ],
-    fallback: false, // See the "fallback" section below
+    fallback: false,
   };
 }
 
