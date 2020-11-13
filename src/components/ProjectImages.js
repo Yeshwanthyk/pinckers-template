@@ -44,20 +44,16 @@ const ProjectImages = ({
       )}
 
       {photoIndex === 0 && (
-        <Box>
+        <Box alignSelf="flex-start">
           <Box
             textTransform="capitalize"
             mb={4}
             fontWeight={'bold'}
-            fontSize={['sm', 'base', 'base']}
+            fontSize={['xl', '2xl', '2xl']}
           >
             {projectName}
           </Box>
-          <Box
-            maxW={['50vw']}
-            fontWeight={'normal'}
-            fontSize={['0.5rem', '0.75rem']}
-          >
+          <Box maxW={['50vw']} fontWeight={'normal'} fontSize={['l', 'l']}>
             {projectDesc}
           </Box>
         </Box>

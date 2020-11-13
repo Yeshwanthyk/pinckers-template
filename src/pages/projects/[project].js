@@ -6,42 +6,17 @@ import siteData from '../../../siteData';
 import PhotoCounter from '../../components/PhotoCounter';
 import ProjectImages from '../../components/ProjectImages';
 
-const ProjectPage = () => {
+import fs from 'fs';
+import path from 'path';
+
+const ProjectPage = ({ imageNames }) => {
+  console.log(imageNames);
   const [photoIndex, setphotoIndex] = useState(0);
   const [imageNum, setimageNum] = useState(0);
   const [projectDesc, setprojectDesc] = useState('');
   const router = useRouter();
 
   const { project: projectName } = router.query;
-
-  useEffect(() => {
-    if (router.asPath !== router.route) {
-      const projectData = siteData.filter(
-        (project) => project.name === projectName
-      )[0];
-
-      setimageNum(projectData.imageNum);
-      setprojectDesc(projectData.desc);
-    }
-  }, [router]);
-
-  useEffect(() => {
-    const handleRouteChange = () => {
-      setphotoIndex(0);
-    };
-
-    router.events.on('routeChangeComplete', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeStart', handleRouteChange);
-    };
-  }, []);
-
-  let imageNames = [];
-  if (imageNum > 0) {
-    for (let i = 1; i <= imageNum; i++) {
-      imageNames.push(`/${projectName}/${projectName}_${i}.jpg`);
-    }
-  }
 
   return (
     <Flex>
@@ -66,5 +41,31 @@ const ProjectPage = () => {
     </Flex>
   );
 };
+
+export async function getStaticProps({ params }) {
+  const postsDirectory = `public/${params.project}`;
+  const filenames = fs.readdirSync(postsDirectory);
+
+  const imageNames = filenames.map((filename) => {
+    const filePath = path.join(`/${params.project}`, filename);
+
+    return filePath;
+  });
+  return {
+    props: {
+      imageNames,
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { project: 'briefly' } },
+      { params: { project: 'basement' } },
+    ],
+    fallback: false, // See the "fallback" section below
+  };
+}
 
 export default ProjectPage;
