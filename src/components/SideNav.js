@@ -21,7 +21,7 @@ const SideNav = () => {
               return (
                 <Box
                   as="li"
-                  key={project.name}
+                  key={project.slug}
                   textTransform="capitalize"
                   mb={2}
                   fontSize="0.75rem"
@@ -30,7 +30,7 @@ const SideNav = () => {
                   <Link
                     href={{
                       pathname: '/projects/[project]',
-                      query: { project: project.name },
+                      query: { project: project.slug },
                     }}
                   >
                     <a>{project.name}</a>

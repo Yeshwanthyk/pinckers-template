@@ -12,19 +12,21 @@ import path from 'path';
 const ProjectPage = ({ imageNames }) => {
   const [photoIndex, setphotoIndex] = useState(0);
   const [imageNum, setimageNum] = useState(0);
+  const [projectName, setprojectName] = useState('');
   const [projectDesc, setprojectDesc] = useState('');
   const router = useRouter();
 
-  const { project: projectName } = router.query;
+  const { project: projectSlug } = router.query;
 
   useEffect(() => {
     if (router.asPath !== router.route) {
       const projectData = siteData.projects.filter(
-        (project) => project.name === projectName
+        (project) => project.slug === projectSlug
       )[0];
 
       setimageNum(projectData.imageNum);
       setprojectDesc(projectData.desc);
+      setprojectName(projectData.name);
     }
   }, [router]);
 
@@ -82,8 +84,8 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   return {
     paths: [
-      { params: { project: 'briefly' } },
-      { params: { project: 'basement' } },
+      { params: { project: 'at-the-edge-of-the-universe' } },
+      { params: { project: 'the-white-whale-has-escaped' } },
     ],
     fallback: false,
   };
