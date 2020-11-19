@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box } from '@chakra-ui/core';
+import { Flex, Box } from '@chakra-ui/react';
 
 const PhotoCounter = ({ imageNum, photoIndex, setphotoIndex }) => {
   const nextImage = () => {

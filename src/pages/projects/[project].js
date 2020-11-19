@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Flex, Image as CImage } from '@chakra-ui/core';
+import { Box, Flex, Image as CImage } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import SideNav from '../../components/SideNav';
 import siteData from '../../../siteData';
@@ -12,19 +12,21 @@ import path from 'path';
 const ProjectPage = ({ imageNames }) => {
   const [photoIndex, setphotoIndex] = useState(0);
   const [imageNum, setimageNum] = useState(0);
+  const [projectName, setprojectName] = useState('');
   const [projectDesc, setprojectDesc] = useState('');
   const router = useRouter();
 
-  const { project: projectName } = router.query;
+  const { project: projectSlug } = router.query;
 
   useEffect(() => {
     if (router.asPath !== router.route) {
-      const projectData = siteData.filter(
-        (project) => project.name === projectName
+      const projectData = siteData.projects.filter(
+        (project) => project.slug === projectSlug
       )[0];
 
       setimageNum(projectData.imageNum);
       setprojectDesc(projectData.desc);
+      setprojectName(projectData.name);
     }
   }, [router]);
 
@@ -41,7 +43,7 @@ const ProjectPage = ({ imageNames }) => {
 
   return (
     <Flex>
-      <Flex flexBasis={['4rem', '6rem', '8rem']} flexGrow="1">
+      <Flex flexBasis={['4rem', '6rem', '10rem']} flexGrow="1">
         <SideNav />
       </Flex>
       <Flex flexDirection="column" flexBasis="0" flexGrow="999" ml={8}>
@@ -82,8 +84,8 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   return {
     paths: [
-      { params: { project: 'briefly' } },
-      { params: { project: 'basement' } },
+      { params: { project: 'at-the-edge-of-the-universe' } },
+      { params: { project: 'the-white-whale-has-escaped' } },
     ],
     fallback: false,
   };

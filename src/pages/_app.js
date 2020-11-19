@@ -1,11 +1,19 @@
-import App from 'next/app';
 import { ThemeProvider } from 'styled-components';
-import {
-  ThemeProvider as ChakraProvider,
-  CSSReset,
-  Box,
-} from '@chakra-ui/core';
-import { theme } from '@chakra-ui/core';
+import { ChakraProvider, CSSReset, Box } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
+
+const theme = extendTheme({
+  styles: {
+    global: {
+      'html, body': {
+        fontFamily: 'lato',
+      },
+      a: {
+        color: 'teal.500',
+      },
+    },
+  },
+});
 
 function MyApp({ Component, pageProps }) {
   return (

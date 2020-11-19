@@ -1,24 +1,22 @@
-import { Box, Flex } from '@chakra-ui/core';
-import Head from 'next/head';
+import { Box, Flex } from '@chakra-ui/react';
 import MainGallery from '../components/MainGallery';
+import Meta from '../components/Meta';
 import SideNav from '../components/SideNav';
 
 export default function Home() {
   return (
-    <Box>
-      <Head>
-        <title> The Yendamuri </title>
-        <link rel="icon" href="../src/assets/favicon.ico" />
-      </Head>
-
-      <Flex>
-        <Flex flexBasis="10rem" flexGrow="1">
-          <SideNav />
+    <>
+      <Meta />
+      <Box>
+        <Flex>
+          <Flex flexBasis={['4rem', '6rem', '10rem']} flexGrow="1">
+            <SideNav />
+          </Flex>
+          <Flex flexDirection="column" flexBasis="0" flexGrow="999" ml={6}>
+            <MainGallery />
+          </Flex>
         </Flex>
-        <Flex flexDirection="column" flexBasis="0" flexGrow="999" ml={8}>
-          <MainGallery />
-        </Flex>
-      </Flex>
-    </Box>
+      </Box>
+    </>
   );
 }

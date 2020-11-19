@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, List, ListItem, PseudoBox } from '@chakra-ui/core';
+import { Box, Flex, List } from '@chakra-ui/react';
 import Link from 'next/link';
 import siteData from '../../siteData';
 import Logo from './Logo';
@@ -16,12 +16,12 @@ const SideNav = () => {
           </Link>
         </Box>
         <List>
-          {siteData.map((project) => {
+          {siteData.projects.map((project) => {
             {
               return (
-                <PseudoBox
+                <Box
                   as="li"
-                  key={project.name}
+                  key={project.slug}
                   textTransform="capitalize"
                   mb={2}
                   fontSize="0.75rem"
@@ -30,12 +30,12 @@ const SideNav = () => {
                   <Link
                     href={{
                       pathname: '/projects/[project]',
-                      query: { project: project.name },
+                      query: { project: project.slug },
                     }}
                   >
                     <a>{project.name}</a>
                   </Link>
-                </PseudoBox>
+                </Box>
               );
             }
           })}
