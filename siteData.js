@@ -3,7 +3,7 @@ const siteData = {
   websiteName: 'John Doe Portfolio',
   facebook: 'yesh.yk',
   twitter: 'yesh',
-  mainImage: '/at-the-edge-of-the-universe/1.jpg',
+  mainImage: '/at-the-edge-of-the-universe/4.jpg',
   websiteUrl: 'https://pinckers-template.hsey.vercel.app/',
   projects: [
     {
