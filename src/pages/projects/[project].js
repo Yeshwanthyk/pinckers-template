@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Flex, Image as CImage } from '@chakra-ui/core';
+import { Box, Flex, Image as CImage } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import SideNav from '../../components/SideNav';
 import siteData from '../../../siteData';
