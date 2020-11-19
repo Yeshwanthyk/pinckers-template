@@ -29,7 +29,11 @@ const ProjectImages = ({
           cursor="pointer"
           onClick={nextImage}
         >
-          <CImage src={imageNames[photoIndex]} objectFit="cover" />
+          <CImage
+            src={imageNames[photoIndex]}
+            alt={`images for project ${projectName}`}
+            objectFit="cover"
+          />
         </Box>
       ) : (
         <Box
@@ -39,7 +43,11 @@ const ProjectImages = ({
           cursor="pointer"
           onClick={nextImage}
         >
-          <CImage src={imageNames[photoIndex]} objectFit="cover" />
+          <CImage
+            src={imageNames[photoIndex]}
+            objectFit="cover"
+            alt={`images for project ${projectName}`}
+          />
         </Box>
       )}
 

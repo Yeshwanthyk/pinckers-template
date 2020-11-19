@@ -37,6 +37,7 @@ const Meta = () => {
         content={siteData.websiteName}
         key="ogdesc"
       ></meta>
+      <meta property="og:type" content="website" />
 
       <title>{siteData.websiteName}</title>
 
