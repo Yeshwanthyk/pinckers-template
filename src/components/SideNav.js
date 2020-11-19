@@ -25,6 +25,7 @@ const SideNav = () => {
                   textTransform="capitalize"
                   mb={2}
                   fontSize="0.75rem"
+                  mb={3}
                   _hover={{ color: '#ff0a78' }}
                 >
                   <Link
