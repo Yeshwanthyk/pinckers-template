@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, Image as CImage } from '@chakra-ui/core';
+import { Box, Flex, Image as CImage } from '@chakra-ui/react';
 
 const ProjectImages = ({
   imageNames,
@@ -47,9 +47,9 @@ const ProjectImages = ({
         <Box alignSelf="flex-start">
           <Box
             textTransform="capitalize"
-            mb={4}
+            mb={2}
             fontWeight={'bold'}
-            fontSize={['m', 'm', 'm']}
+            fontSize={['m', 'm', 'xl']}
           >
             {projectName}
           </Box>

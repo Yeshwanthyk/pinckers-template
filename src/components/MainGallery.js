@@ -1,10 +1,12 @@
 import React from 'react';
-import Image from 'next/image';
+import { Box, Image } from '@chakra-ui/react';
 
 const MainGallery = () => {
   return (
     <>
-      <Image src="/briefly/briefly_1.jpg" width="400px" height="600px" />
+      <Box>
+        <Image src="/briefly/briefly_5.jpg" />
+      </Box>
     </>
   );
 };
