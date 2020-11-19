@@ -1,4 +1,3 @@
-import App from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { ChakraProvider, CSSReset, Box } from '@chakra-ui/react';
 import { extendTheme } from '@chakra-ui/react';
