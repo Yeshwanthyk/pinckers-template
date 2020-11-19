@@ -6,7 +6,7 @@ const MainGallery = () => {
   return (
     <>
       <Box>
-        <Image src={siteData.mainImage} />
+        <Image src={siteData.mainImage} alt="feature image" />
       </Box>
     </>
   );
