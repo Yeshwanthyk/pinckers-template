@@ -1,8 +1,10 @@
 const siteData = {
-  author: 'Yesh Yendamuri',
+  author: 'John Doe',
+  websiteName: 'John Doe Portfolio',
   facebook: 'yesh.yk',
   twitter: 'yesh',
   mainImage: '/at-the-edge-of-the-universe/1.jpg',
+  websiteUrl: 'https://pinckers-template.hsey.vercel.app/',
   projects: [
     {
       name: 'At the edge of the universe',

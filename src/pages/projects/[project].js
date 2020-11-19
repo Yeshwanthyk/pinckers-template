@@ -43,7 +43,7 @@ const ProjectPage = ({ imageNames }) => {
 
   return (
     <Flex>
-      <Flex flexBasis={['4rem', '6rem', '8rem']} flexGrow="1">
+      <Flex flexBasis={['4rem', '6rem', '10rem']} flexGrow="1">
         <SideNav />
       </Flex>
       <Flex flexDirection="column" flexBasis="0" flexGrow="999" ml={8}>

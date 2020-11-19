@@ -24,8 +24,8 @@ const ProjectImages = ({
       {photoIndex === 0 ? (
         <Box
           maxW={['60vw', '60vw', '50vw', '55vw']}
-          mx={8}
-          my={[4, 4, 4, 0]}
+          mx={[0, 8]}
+          my={[1, 4, 4, 0]}
           cursor="pointer"
           onClick={nextImage}
         >
@@ -34,8 +34,8 @@ const ProjectImages = ({
       ) : (
         <Box
           maxW={['70vw', '70vw', '60vw', '65vw']}
-          mx={8}
-          my={[4, 4, 4, 0]}
+          mx={[0, 8]}
+          my={[1, 4, 4, 0]}
           cursor="pointer"
           onClick={nextImage}
         >
@@ -47,13 +47,13 @@ const ProjectImages = ({
         <Box alignSelf="flex-start">
           <Box
             textTransform="capitalize"
-            mb={2}
+            my={1}
             fontWeight={'bold'}
             fontSize={['m', 'm', 'xl']}
           >
             {projectName}
           </Box>
-          <Box maxW={['50vw']} fontWeight={'normal'} fontSize={['sm', 'sm']}>
+          <Box maxW={['50vw']} fontWeight={'normal'} fontSize={['xs', 'sm']}>
             {projectDesc}
           </Box>
         </Box>
