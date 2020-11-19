@@ -1,11 +1,12 @@
 import React from 'react';
 import { Box, Image } from '@chakra-ui/react';
+import siteData from '../../siteData';
 
 const MainGallery = () => {
   return (
     <>
       <Box>
-        <Image src="/briefly/briefly_5.jpg" />
+        <Image src={siteData.mainImage} />
       </Box>
     </>
   );
