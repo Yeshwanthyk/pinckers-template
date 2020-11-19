@@ -49,11 +49,11 @@ const ProjectImages = ({
             textTransform="capitalize"
             mb={4}
             fontWeight={'bold'}
-            fontSize={['xl', '2xl', '2xl']}
+            fontSize={['m', 'm', 'm']}
           >
             {projectName}
           </Box>
-          <Box maxW={['50vw']} fontWeight={'normal'} fontSize={['l', 'l']}>
+          <Box maxW={['50vw']} fontWeight={'normal'} fontSize={['sm', 'sm']}>
             {projectDesc}
           </Box>
         </Box>
