@@ -19,7 +19,7 @@ const ProjectPage = ({ imageNames }) => {
 
   useEffect(() => {
     if (router.asPath !== router.route) {
-      const projectData = siteData.filter(
+      const projectData = siteData.projects.filter(
         (project) => project.name === projectName
       )[0];
 

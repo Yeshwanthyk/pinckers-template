@@ -16,7 +16,7 @@ const SideNav = () => {
           </Link>
         </Box>
         <List>
-          {siteData.map((project) => {
+          {siteData.projects.map((project) => {
             {
               return (
                 <Box
