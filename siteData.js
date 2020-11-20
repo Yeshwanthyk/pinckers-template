@@ -3,7 +3,7 @@ const siteData = {
   websiteName: 'John Doe Portfolio',
   facebook: 'yesh.yk',
   instagram: '__yesh__',
-  mainImage: '/at-the-edge-of-the-universe/4.jpg',
+  mainImage: '/the-white-whale-has-escaped/5.jpg',
   websiteUrl: 'https://pinckers-template.hsey.vercel.app/',
   projects: [
     {
