@@ -1,10 +1,12 @@
 import React from 'react';
-import { Box, Flex, List, Icon, Text } from '@chakra-ui/react';
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { Box, Flex, List, Icon, Text, useColorMode } from '@chakra-ui/react';
+import { FaFacebookF, FaInstagram, FaSun, FaMoon } from 'react-icons/fa';
 import Link from 'next/link';
 import siteData from '../../siteData';
 
 const SideNav = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Box as="nav">
       <Flex flexDirection="column">
@@ -51,6 +53,13 @@ const SideNav = () => {
             </a>
           </Link>
         </Flex>
+
+        {colorMode === 'dark' ? (
+          <Icon my={2} onClick={toggleColorMode} as={FaSun} />
+        ) : (
+          <Icon my={1} onClick={toggleColorMode} as={FaMoon} />
+        )}
+
         <Text fontSize="8px" mt={1}>{`© 2020 ${siteData.author} `}</Text>
       </Flex>
     </Box>
