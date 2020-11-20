@@ -1,65 +1,33 @@
-import Head from 'next/head';
 import React from 'react';
 import siteData from '../../siteData';
+import { NextSeo } from 'next-seo';
 
 const Meta = () => {
   return (
-    <Head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="description" content={siteData.websiteName} />
-      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="../assets/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="../assets/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="../assets/favicon-16x16.png"
-      />
-      <meta property="og:site_name" content={siteData.websiteName} />
-      <meta
-        property="og:title"
-        content={`Images of ${siteData.author}`}
-        key="ogtitle"
-      />
-      <meta
-        property="og:description"
-        content={siteData.websiteName}
-        key="ogdesc"
-      ></meta>
-      <meta property="og:type" content="website" />
-
-      <title>{siteData.websiteName}</title>
-
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary" key="twcard" />
-      <meta name="twitter:creator" content={siteData.twitter} key="twhandle" />
-
-      {/* Open Graph */}
-      <meta property="og:url" content={siteData.websiteUrl} key="ogurl" />
-      <meta property="og:image" content={siteData.mainImage} key="ogimage" />
-      <meta
-        property="og:site_name"
-        content={siteData.websiteName}
-        key="ogsitename"
-      />
-      <meta property="og:title" content={siteData.websiteName} key="ogtitle" />
-      <meta
-        property="og:description"
-        content={siteData.websiteName}
-        key="ogdesc"
-      />
-    </Head>
+    <NextSeo
+      title={siteData.websiteName}
+      description={siteData.description}
+      canonical={siteData.websiteUrl}
+      openGraph={{
+        url: siteData.websiteUrl,
+        title: siteData.websiteName,
+        description: siteData.description,
+        images: [
+          {
+            url: siteData.mainImage,
+            width: 800,
+            height: 600,
+            alt: 'Og Image Alt',
+          },
+        ],
+        site_name: siteData.websiteUrl,
+      }}
+      twitter={{
+        handle: `@${siteData.twitter}`,
+        site: siteData.websiteUrl,
+        cardType: 'summary_large_image',
+      }}
+    />
   );
 };
 

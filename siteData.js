@@ -1,8 +1,11 @@
 const siteData = {
   author: 'John Doe',
   websiteName: 'John Doe Portfolio',
+  description:
+    'A photography portfolio website of John Doe build by Yesh Yendamuri',
   facebook: 'yesh.yk',
   instagram: '__yesh__',
+  twitter: 'yesh',
   mainImage: '/the-white-whale-has-escaped/5.jpg',
   websiteUrl: 'https://pinckers-template.hsey.vercel.app/',
   projects: [
