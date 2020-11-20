@@ -2,17 +2,14 @@ import React from 'react';
 import { Box, Flex, List } from '@chakra-ui/react';
 import Link from 'next/link';
 import siteData from '../../siteData';
-import Logo from './Logo';
 
 const SideNav = () => {
   return (
     <Box as="nav">
       <Flex flexDirection="column">
-        <Box mb={8} width="4rem">
+        <Box mb={8} width={['5rem', '10rem']}>
           <Link href="/">
-            <a>
-              <Logo />
-            </a>
+            <a>{siteData.author.toUpperCase()}</a>
           </Link>
         </Box>
         <List>

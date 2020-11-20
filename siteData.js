@@ -2,7 +2,7 @@ const siteData = {
   author: 'John Doe',
   websiteName: 'John Doe Portfolio',
   facebook: 'yesh.yk',
-  twitter: 'yesh',
+  instagram: '__yesh__',
   mainImage: '/at-the-edge-of-the-universe/4.jpg',
   websiteUrl: 'https://pinckers-template.hsey.vercel.app/',
   projects: [
