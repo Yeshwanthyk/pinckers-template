@@ -15,7 +15,7 @@ const PhotoCounter = ({ imageNum, photoIndex, setphotoIndex }) => {
   };
   return (
     <Flex mb={2}>
-      <Box mr={2} ml={8} fontSize={['xs']}>{`${
+      <Box mr={[1, 2, 2]} ml={[1, 8, 9]} fontSize={['xs']}>{`${
         photoIndex + 1
       } of ${imageNum}`}</Box>
       <Box as="button" mr={1} fontSize={['xs']} onClick={prevImage}>
