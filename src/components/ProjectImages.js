@@ -52,7 +52,7 @@ const ProjectImages = ({
       )}
 
       {photoIndex === 0 && (
-        <Box alignSelf="center">
+        <Box alignSelf="center" mb="auto">
           <Box
             textTransform="capitalize"
             my={1}

@@ -8,6 +8,7 @@ import ProjectImages from '../../components/ProjectImages';
 
 import fs from 'fs';
 import path from 'path';
+import naturalSort from '../../utils/natural-sort';
 
 const ProjectPage = ({ imageNames }) => {
   const [photoIndex, setphotoIndex] = useState(0);
@@ -74,6 +75,10 @@ export async function getStaticProps({ params }) {
 
     return filePath;
   });
+
+  imageNames.sort((a, b) => naturalSort(a, b));
+  console.log(imageNames);
+
   return {
     props: {
       imageNames,

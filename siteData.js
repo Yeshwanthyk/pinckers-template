@@ -14,7 +14,7 @@ const siteData = {
       slug: 'at-the-edge-of-the-universe',
       desc: `Are you suggesting coconuts migrate? Oh and Jenkins, apparently your mother died this morning. It's not pining, it's passed on! This parrot is no more! It has ceased to be! It's expired and gone to meet its maker! This is a late parrot! It's a stiff! Bereft of life, it rests in peace! If you hadn't nailed it to the perch, it would be pushing up the daisies! It's metabolic processes are now history! He's off the twig! He's kicked the bucket, he's shuffled off the mortal coil, rung down the curtain and joined the choir invisible. This is an ex-parrot! Not necessarily. I could be arguing in my spare time.
     `,
-      imageNum: 6,
+      imageNum: 16,
     },
     {
       name: 'The white whale has escaped',
