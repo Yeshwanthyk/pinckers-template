@@ -42,12 +42,15 @@ const SideNav = () => {
           })}
         </List>
         <Flex mt="2rem" mb={1}>
-          <Link href={`https://www.instagram.com/${siteData.instagram}`}>
+          <Link
+            href={`https://www.instagram.com/${siteData.instagram}`}
+            passHref
+          >
             <a>
               <Icon as={FaInstagram} mr={2} />
             </a>
           </Link>
-          <Link href={`https://www.facebook.com/${siteData.facebook}`}>
+          <Link href={`https://www.facebook.com/${siteData.facebook}`} passHref>
             <a>
               <Icon as={FaFacebookF} />
             </a>
