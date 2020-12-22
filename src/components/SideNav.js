@@ -10,11 +10,13 @@ const SideNav = () => {
   return (
     <Box as="nav">
       <Flex flexDirection="column">
-        <Box mb={8} width={['5rem', '10rem']}>
-          <Link href="/">
-            <a>{siteData.author.toUpperCase()}</a>
-          </Link>
-        </Box>
+        <header>
+          <Box mb={8} width={['5rem', '10rem']}>
+            <Link href="/">
+              <a>{siteData.author.toUpperCase()}</a>
+            </Link>
+          </Box>
+        </header>
         <List>
           {siteData.projects.map((project) => {
             {
