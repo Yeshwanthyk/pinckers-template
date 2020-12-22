@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Box, Flex, Image as CImage } from '@chakra-ui/react';
 
 const ProjectImages = ({
@@ -7,6 +8,7 @@ const ProjectImages = ({
   projectName,
   projectDesc,
   imageNum,
+  imageSizes,
   setphotoIndex,
 }) => {
   const nextImage = () => {
@@ -24,29 +26,33 @@ const ProjectImages = ({
       {photoIndex === 0 ? (
         <Box
           maxW={['60vw', '60vw', '50vw', '55vw']}
-          mx={[0, 8]}
+          mx={[2, 8]}
           my={[1, 4, 4, 0]}
           cursor="pointer"
           onClick={nextImage}
         >
-          <CImage
+          <Image
             src={imageNames[photoIndex]}
             alt={`images for project ${projectName}`}
-            objectFit="cover"
+            width={imageSizes[photoIndex].width}
+            height={imageSizes[photoIndex].height}
+            key={imageNames[photoIndex]}
           />
         </Box>
       ) : (
         <Box
           maxW={['70vw', '70vw', '60vw', '65vw']}
-          mx={[0, 8]}
+          mx={[2, 8]}
           my={[1, 4, 4, 0]}
           cursor="pointer"
           onClick={nextImage}
         >
-          <CImage
+          <Image
             src={imageNames[photoIndex]}
-            objectFit="cover"
+            width={imageSizes[photoIndex].width}
+            height={imageSizes[photoIndex].height}
             alt={`images for project ${projectName}`}
+            key={imageNames[photoIndex]}
           />
         </Box>
       )}

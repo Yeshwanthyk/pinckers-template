@@ -7,7 +7,7 @@ const siteData = {
   instagram: '__yesh__',
   twitter: 'yesh',
   mainImage: '/the-white-whale-has-escaped/5.jpg',
-  websiteUrl: 'https://pinckers-template.hsey.vercel.app/',
+  websiteUrl: 'https://personal-portfolio-made-easy.hsey.vercel.app',
   projects: [
     {
       name: 'At the edge of the universe',
