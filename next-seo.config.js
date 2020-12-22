@@ -1,6 +1,6 @@
 import siteData from './siteData';
 
-const title = siteData.title;
+const title = siteData.websiteName;
 const description = siteData.description;
 const SEO = {
   title,
