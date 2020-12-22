@@ -77,7 +77,6 @@ export async function getStaticProps({ params }) {
   });
 
   imageNames.sort((a, b) => naturalSort(a, b));
-  console.log(imageNames);
 
   return {
     props: {
