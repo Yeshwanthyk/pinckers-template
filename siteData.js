@@ -7,6 +7,7 @@ const siteData = {
   instagram: '__yesh__',
   twitter: 'yesh',
   mainImage: '/the-white-whale-has-escaped/5.jpg',
+  mainImageDimensions: { width: 550, height: 700 },
   websiteUrl: 'https://personal-portfolio-made-easy.hsey.vercel.app',
   projects: [
     {
