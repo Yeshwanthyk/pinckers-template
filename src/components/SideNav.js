@@ -41,13 +41,18 @@ const SideNav = () => {
             }
           })}
         </List>
-        <Flex mt="2rem" mb={1}>
-          <Link href={`https://www.instagram.com/${siteData.instagram}`}>
-            <a>
-              <Icon as={FaInstagram} mr={2} />
-            </a>
-          </Link>
-          <Link href={`https://www.facebook.com/${siteData.facebook}`}>
+        <Flex mt="2rem" mb={4}>
+          <Box mr={2}>
+            <Link
+              href={`https://www.instagram.com/${siteData.instagram}`}
+              passHref
+            >
+              <a>
+                <Icon as={FaInstagram} mr={2} />
+              </a>
+            </Link>
+          </Box>
+          <Link href={`https://www.facebook.com/${siteData.facebook}`} passHref>
             <a>
               <Icon as={FaFacebookF} />
             </a>
@@ -60,7 +65,7 @@ const SideNav = () => {
           <Icon my={1} onClick={toggleColorMode} as={FaMoon} />
         )}
 
-        <Text fontSize="8px" mt={1}>{`© 2020 ${siteData.author} `}</Text>
+        <Text fontSize="8px" mt={4}>{`© 2020 ${siteData.author} `}</Text>
       </Flex>
     </Box>
   );

@@ -9,8 +9,9 @@ import ProjectImages from '../../components/ProjectImages';
 import fs from 'fs';
 import path from 'path';
 import naturalSort from '../../utils/natural-sort';
+import sizeOf from 'image-size';
 
-const ProjectPage = ({ imageNames }) => {
+const ProjectPage = ({ imageNames, imageSizes }) => {
   const [photoIndex, setphotoIndex] = useState(0);
   const [imageNum, setimageNum] = useState(0);
   const [projectName, setprojectName] = useState('');
@@ -59,6 +60,7 @@ const ProjectPage = ({ imageNames }) => {
           projectDesc={projectDesc}
           photoIndex={photoIndex}
           imageNum={imageNum}
+          imageSizes={imageSizes}
           setphotoIndex={setphotoIndex}
         />
       </Flex>
@@ -77,11 +79,16 @@ export async function getStaticProps({ params }) {
   });
 
   imageNames.sort((a, b) => naturalSort(a, b));
-  console.log(imageNames);
+
+  const imageSizes = imageNames.map((filename) => {
+    const filePath = path.join(`public`, filename);
+    return sizeOf(filePath);
+  });
 
   return {
     props: {
       imageNames,
+      imageSizes,
     },
   };
 }
