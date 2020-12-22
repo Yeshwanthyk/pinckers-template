@@ -41,8 +41,8 @@ const SideNav = () => {
             }
           })}
         </List>
-        <Flex mt="2rem" mb={1}>
-          <Box>
+        <Flex mt="2rem" mb={4}>
+          <Box mr={2}>
             <Link
               href={`https://www.instagram.com/${siteData.instagram}`}
               passHref
@@ -65,7 +65,7 @@ const SideNav = () => {
           <Icon my={1} onClick={toggleColorMode} as={FaMoon} />
         )}
 
-        <Text fontSize="8px" mt={1}>{`© 2020 ${siteData.author} `}</Text>
+        <Text fontSize="8px" mt={4}>{`© 2020 ${siteData.author} `}</Text>
       </Flex>
     </Box>
   );
