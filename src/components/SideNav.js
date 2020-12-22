@@ -49,13 +49,21 @@ const SideNav = () => {
               href={`https://www.instagram.com/${siteData.instagram}`}
               passHref
             >
-              <a aria-label="instagram link">
+              <a
+                aria-label="instagram link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Icon as={FaInstagram} />
               </a>
             </Link>
           </Box>
           <Link href={`https://www.facebook.com/${siteData.facebook}`} passHref>
-            <a aria-label="facebook link">
+            <a
+              aria-label="facebook link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Icon as={FaFacebookF} />
             </a>
           </Link>
