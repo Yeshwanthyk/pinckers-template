@@ -5,12 +5,16 @@ const PhotoCounter = ({ imageNum, photoIndex, setphotoIndex }) => {
   const nextImage = () => {
     if (!(photoIndex > imageNum - 2)) {
       setphotoIndex(photoIndex + 1);
+    } else {
+      setphotoIndex(0);
     }
   };
 
   const prevImage = () => {
     if (photoIndex > 0) {
       setphotoIndex(photoIndex - 1);
+    } else {
+      setphotoIndex(imageNum - 1);
     }
   };
   return (
