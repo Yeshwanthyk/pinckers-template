@@ -44,7 +44,7 @@ const SideNav = () => {
           })}
         </List>
         <Flex mt="2rem" mb={6}>
-          <Box mr={6}>
+          <Box mr={4}>
             <Link
               href={`https://www.instagram.com/${siteData.instagram}`}
               passHref
