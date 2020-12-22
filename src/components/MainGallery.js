@@ -1,19 +1,12 @@
 import React from 'react';
-import { Box } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Box, Image } from '@chakra-ui/react';
 import siteData from '../../siteData';
-import path from 'path';
 
 const MainGallery = () => {
   return (
     <>
       <Box>
-        <Image
-          src={siteData.mainImage}
-          width={siteData.mainImageDimensions.width}
-          height={siteData.mainImageDimensions.height}
-          alt="feature image"
-        />
+        <Image src={siteData.mainImage} alt="feature image" />
       </Box>
     </>
   );
