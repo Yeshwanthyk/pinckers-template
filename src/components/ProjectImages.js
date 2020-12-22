@@ -14,6 +14,8 @@ const ProjectImages = ({
   const nextImage = () => {
     if (!(photoIndex > imageNum - 2)) {
       setphotoIndex(photoIndex + 1);
+    } else {
+      setphotoIndex(0);
     }
   };
 
